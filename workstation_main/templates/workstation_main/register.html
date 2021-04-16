@@ -1,0 +1,28 @@
+{% extends 'workstation_main/layout.html' %}
+{% block auth %}
+<div class="login_div container-fluid">
+<form action='{% url "register" %}' method="POST">
+    {% csrf_token %}
+    <span>{{message}}</span>
+    <div class="form-group">
+      <label for="InputEmail">Email address</label>
+      <input type="email" class="form-control" id="InputEmail" name="InputEmail"aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="Inputusername"> UserName</label>
+        <input type="text" class="form-control" id="Inputusername" name="Inputusername" placeholder="username">
+    </div>
+    <div class="form-group">
+      <label for="InputPassword">Password</label>
+      <input type="password" class="form-control" id="InputPassword" name="InputPassword" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="ReInputPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="ReInputPassword" name="ReInputPassword"placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+  </form>
+  <span>Already have a account<a href="{% url 'login' %}">Login</a></span>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+body
+{
+    height: 100vh;
+}
+.login_div
+{  
+    height: 100%;
+    width:100%;
+    background-color: rgba(230, 230, 230, 0.377);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login_div form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:45vw;
+}
+#InputPassword
+{
+    margin-bottom: 1em;
+}
+@media(max-width:400px)
+{
+    .login_div
+    {
+       
+        align-items: flex-start;
+    }
+    .login_div form
+
+    {
+        width:100%;
+    }
+}

@@ -1,0 +1,147 @@
+{% extends 'workstation_main/index.html' %}
+{%  block content%}
+<div class="content container-fluid">
+      <div id="form" class=" ">
+        <div class="form-content container-fluid d-grid gap-3">
+          <div class="row mb-3 mt-3">
+            <div class="d-flex flex-row align-items-center justify-content-between">
+                <div class="d-flex flex-row align-items-start">
+                <div class="h6" id="prev">Prev</div>
+                <div class="h3 mr-3 ml-3 " id="today">Today</div>
+                <div class="h6" id="next">Next</div>
+              </div>
+              
+              <div id="date_div">date</div>
+              
+            </div>
+          </div>
+          <div class="row justify-content-around flex-wrap" id="form-content-div">
+            <div class="col-md-5 ">
+              <div id="goal-checkbox" class="row mb-3">
+                <h7>Goals</h7>
+                <div style="display: flex; flex-direction: column;">
+                  <div style="display: flex; flex-direction:column; "  id="goals-div">
+                    
+                  </div>
+                  <button type="button" class="btn btn-secondary" id="today-goal">Add today's goal</button>
+                </div>
+                
+              </div>
+              <div id="text-yesterday" class="row mb-3">
+                  <div class="d-flex-col">
+                    <h7>Notes form Yesterday</h7>  
+                    <ul class="list-group list-group-flush d-grid gap-3">
+                      <li class="list-group-item" id="prev-note">Note from Yesterday</li>
+                    </ul>
+                  </div>
+              </div>
+              <div id="notes-tmr" class="mb-3 row">
+                <div class="d-flex-col">
+                <label for="notes-for-tmr" class="form-label">Notes for Tommorow</label>
+                <textarea class="form-data-note-tmr form-control" id="notes-for-tmr" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 ">
+              <div id="today-comment " class="mb-3 row">
+                <label for="today-comment-text" class="form-label">Comment</label>
+                <textarea class="form-data-comment form-control" id="today-comment-text" rows="3"></textarea>
+              </div>
+              <div id="grateful" class="mb-3 row">
+                <label for="grateful-data" class="form-label">Grateful</label>
+                <textarea id="grateful-data" class="form-data-grateful form-control" rows="3"></textarea>
+              </div>
+              <div id="goals-tmr" class="mb-3 row">
+                <label for="goal-tmr-data" class="form-label">Goals for Tommorow</label>
+                  <input type="text" class="form-data-goal-tmr form-control" style="width:70%;">
+                  <input type="text" class="form-data-goal-tmr form-control" style="width:70%;">
+                  <input type="text" class="form-data-goal-tmr form-control"style="width:70%;">
+              </div>
+            </div>
+            <div class="row justify-content-around">
+              <div class="col-md-5">
+                <button class="btn btn-primary"onclick="clear_data()">Reset</button>    
+              </div>
+              <div class="col-md-4">
+               
+              </div>
+            </div>  
+          </div>
+        </div>  
+      </div>
+     
+      <div id="notes" class="container-fluid">
+        
+        <div class="row mb-3 mt-3">
+          <h6>Notes</h6>
+        </div>
+        <div id="note-block" class="row pt-5">
+          <div id="editor-parent">
+            <div id="editor">  
+              <p>Hello World!</p>
+              <p>Some Intial<strong>strong</strong>text</p>
+              <p><br></p>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div id="player" class=" container" >
+        <div class="row">
+          
+          <div class="input-group  col" style="width: 30vw; padding-top: 2vh;">
+            <input type="text"  id="search" class="form-control" placeholder="Episode to Search" aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="button" id="search_btn">Search</button>
+          </div>
+        </div>
+        <div id="playlist" class="row playlist_grid">
+          
+          
+            
+        </div>
+        <div id="podcast" class="row">
+        </div>
+      </div>
+      <div id="task">
+        <div class="row mb-3 mt-3">
+          <h6>Trello</h6>
+        </div>
+        <div class="row" id="main-list">
+          <div class="row row-cols-2 row-cols-md-auto g-4" id="main-list-div">  
+          </div>
+        </div>
+        <div id="pre-list" >
+        <div class="row" id="lists">
+          
+          <h2>Title</h2>
+            <div class="col-2 list-ul">
+            <h4 class="list-group-item h4">List 1</h4>
+              <ul id="sortable1"class="connectedSortable list-group ">
+                <li class=" list-group-item">List1-1</li>
+                <li class="list-group-item">List1-2</li>
+                <li class="list-group-item">List1-3</li>
+                <li class="list-group-item">List1-4</li>
+              </ul>
+              <button type="button" class="btn btn-primary" onclick="add_list('sortable1')">Add more</button>
+            </div>
+            <div class="col-2 list-ul">
+            <h4 class="list-group-item" >List 2</h4>  
+              <ul id="sortable2"class="connectedSortable list-group">
+                <li class=" list-group-item">List2-1</li>
+                <li class="list-group-item">List2-2</li>
+                <li class="list-group-item">List2-3</li>
+                <li class=" list-group-item">List2-4</li>
+                <li class="list-group-item">List2-5</li>
+              </ul>
+              
+              <button type="button" class="btn btn-primary" onclick="add_list('sortable2')">Add more</button>
+            </div>
+             
+        </div>
+      </div>
+      </div>
+
+  </div>
+
+
+{% endblock %}
